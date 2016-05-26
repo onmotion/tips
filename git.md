@@ -20,3 +20,8 @@ Aborting
     
     git clean -f -n #покажет что будет сделано
     git clean -f #если все ок то запускаем
+
+**Удалить файлы из индекса**
+
+    git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch img/catalog' HEAD
+    git push -f --all
