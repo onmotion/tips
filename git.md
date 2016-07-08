@@ -1,27 +1,27 @@
-**Сбросить к состоянию remote branch**
+**РЎР±СЂРѕСЃРёС‚СЊ Рє СЃРѕСЃС‚РѕСЏРЅРёСЋ remote branch**
 
     git fetch some-remote   # "origin" if you want to use your own branch
     git reset --hard some-remote/master
 
-**Создать новую ветку из текущего состояния и сразу выбрать ее**
+**РЎРѕР·РґР°С‚СЊ РЅРѕРІСѓСЋ РІРµС‚РєСѓ РёР· С‚РµРєСѓС‰РµРіРѕ СЃРѕСЃС‚РѕСЏРЅРёСЏ Рё СЃСЂР°Р·Сѓ РІС‹Р±СЂР°С‚СЊ РµРµ**
 
     git checkout -b new_branch
 
-**Удалить неотслеживаемые файлы**
+**РЈРґР°Р»РёС‚СЊ РЅРµРѕС‚СЃР»РµР¶РёРІР°РµРјС‹Рµ С„Р°Р№Р»С‹**
 
-Если при попытке выполнения git pull вы получаете нечто похожее на 
+Р•СЃР»Рё РїСЂРё РїРѕРїС‹С‚РєРµ РІС‹РїРѕР»РЅРµРЅРёСЏ git pull РІС‹ РїРѕР»СѓС‡Р°РµС‚Рµ РЅРµС‡С‚Рѕ РїРѕС…РѕР¶РµРµ РЅР°
 
 >  The following untracked working tree files would be overwritten by merge:  
 ...  
 Please move or remove them before you can merge  
 Aborting
 
-Удаляем неотслеживаемые файлы:
+РЈРґР°Р»СЏРµРј РЅРµРѕС‚СЃР»РµР¶РёРІР°РµРјС‹Рµ С„Р°Р№Р»С‹:
     
-    git clean -f -n #покажет что будет сделано
-    git clean -f #если все ок то запускаем
+    git clean -f -n #ГЇГ®ГЄГ Г¦ГҐГІ Г·ГІГ® ГЎГіГ¤ГҐГІ Г±Г¤ГҐГ«Г Г­Г®
+    git clean -f #ГҐГ±Г«ГЁ ГўГ±ГҐ Г®ГЄ ГІГ® Г§Г ГЇГіГ±ГЄГ ГҐГ¬
 
-**Удалить файлы из индекса**
+**РЈРґР°Р»РёС‚СЊ С„Р°Р№Р»С‹ РёР· РёРЅРґРµРєСЃР°**
 
     git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch img/catalog' HEAD
     git push -f --all
